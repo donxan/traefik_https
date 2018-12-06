@@ -51,6 +51,7 @@ kubectl create configmap traefik-conf --from-file=traefik.toml -n kube-system
 [root@master conf]# kubectl describe cm traefik-conf -n kube-system
 ```
 把上述的文件放到node上面对应的目录,可以使用下面的脚本快速同步一下
+vim file_rsync.sh
 ```
 #!/bin/bash
 
@@ -59,7 +60,9 @@ do
   rsync -av /etc/kubernetes/ssl/tls* 192.168.2.$i:/etc/kubernetes/ssl/
   rsync -av /etc/k8s/ 192.168.2.$i:/etc/k8s/
 done
+
 ```
+`chmod +x file_rsync.sh`
 ### 关键配置文件
 
 ```
