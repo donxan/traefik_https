@@ -4,6 +4,11 @@
 
 ### 准备工作：
 下面的操作在deploy节点操作，此节点同时又被定义为了我的master节点。
+- 克隆配置文件
+```
+git clone https://github.com/donxan/traefik_https.git
+mv traefik_https/* /etc/k8s/conf/
+```
 - 证书：自己生成，或使用机构颁发的证书,
 私签证书命令，需要有安装OpenSSL：
 ```
